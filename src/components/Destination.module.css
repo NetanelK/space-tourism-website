@@ -1,0 +1,53 @@
+h5 {
+    color: white;
+    letter-spacing: 2.75px;
+}
+
+h5 strong {
+    margin-right: 1em;
+    opacity: 25%;
+}
+
+@media (max-width: 450px) {
+    h5 {
+        font-size: 16px;
+        margin-top: 1.5em;
+    }
+
+    .object {
+        max-width: 10.5em;
+        margin: 2em auto;
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    p {
+        max-width: 327px;
+        margin: 0 auto;
+        font-family: "Barlow";
+    }
+
+    .vl {
+        display: block;
+        height: 1px;
+        width: 327px;
+        background: #383b4b;
+        margin: 2em auto;
+    }
+
+    h4 {
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+
+    h6 {
+        font-size: 14px;
+        font-weight: 400;
+        letter-spacing: 2.36px;
+        color: #d0d6f9;
+        margin-bottom: 0.85em;
+        text-transform: uppercase;
+    }
+}

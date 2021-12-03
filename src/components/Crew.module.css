@@ -1,0 +1,30 @@
+@media (max-width: 475px) {
+    h5 {
+        margin-bottom: 2em;
+    }
+
+    .name {
+        font: 400 24px "Bellefair";
+        text-transform: uppercase;
+        margin-block: 0.33em 0.66em;
+    }
+
+    .role {
+        font: 400 16px "Bellefair";
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 49%);
+    }
+
+    .avatar {
+        height: 223px;
+        margin: 0 auto;
+    }
+
+    .vl {
+        display: block;
+        height: 1px;
+        width: 87%;
+        margin: 0 auto;
+        background: #383b4b;
+    }
+}

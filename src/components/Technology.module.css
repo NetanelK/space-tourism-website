@@ -1,0 +1,17 @@
+@media (max-width: 450px) {
+    .name {
+        font: 400 24px "Bellefair";
+        text-transform: uppercase;
+        margin-block: 0.33em 0.66em;
+    }
+
+    .terminology {
+        font: 400 14px "Barlow Condensed";
+        color: #d0d6f9;
+        margin-block: 0 0.5em;
+    }
+
+    p {
+        max-width: 325px;
+    }
+}
