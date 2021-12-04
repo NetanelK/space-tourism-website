@@ -4,6 +4,9 @@ import NavBar from "./utils/NavBar";
 import classes from "./Header.module.css";
 
 const navItems = ["00 home", "01 destination", "02 crew", "03 technology"];
+const tabletNavItems = navItems.map((item) =>
+    item.replace(/[0-9]/g, "".trim())
+);
 
 const Header = (props) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,7 +31,7 @@ const Header = (props) => {
                 <span className={classes.vl}></span>
             )}
 
-            {props.platform !== "desktop" && !isMenuOpen && (
+            {props.platform === "mobile" && !isMenuOpen && (
                 <img
                     src='/assets/shared/icon-hamburger.svg'
                     alt='Open Menu'
@@ -36,7 +39,7 @@ const Header = (props) => {
                     onClick={handleMenuTouch}
                 />
             )}
-            {props.platform !== "desktop" && isMenuOpen && (
+            {props.platform === "mobile" && isMenuOpen && (
                 <div className={classes["nav-wrap"]}>
                     <img
                         src='/assets/shared/icon-close.svg'
@@ -53,6 +56,18 @@ const Header = (props) => {
                     />
                 </div>
             )}
+            {props.platform === "tablet" && (
+                <div className={classes["nav-wrap"]}>
+                    <NavBar
+                        items={tabletNavItems}
+                        activeTab={props.activePage}
+                        onClick={handleClick}
+                        lineHeight='53px'
+                        direction='row'
+                    />
+                </div>
+            )}
+
             {props.platform === "desktop" && (
                 <div className={classes["nav-wrap"]}>
                     <NavBar

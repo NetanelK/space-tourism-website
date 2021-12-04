@@ -8,6 +8,14 @@ const Dot = styled.span`
     width: 10px;
     height: 10px;
     cursor: pointer;
+    font-family: "Bellefair";
+
+    @media (min-width: 1025px) {
+        height: 15px;
+        width: 15px;
+        margin-left: 24px;
+    }
+
     ${(props) =>
         props?.content &&
         `& {
@@ -19,6 +27,22 @@ const Dot = styled.span`
         background: transparent;
         line-height: 40px;
         text-align:center;
+        font-family: "Bellefair";
+
+        @media (min-width: 476px) and (max-width: 1024px) {
+            font-size: 24px;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+        }
+
+        @media (min-width: 1025px) {
+            font-size: 32px;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            margin: 0 0 1em 0;
+        }
 
     }`}
 
@@ -48,7 +72,15 @@ const DotSelection = (props) => {
         );
     }
 
-    return <div>{dotsArray}</div>;
+    return (
+        <>
+            {props.page === "crew" ? (
+                <div>{dotsArray}</div>
+            ) : (
+                <div className='dots-wrapper'>{dotsArray}</div>
+            )}
+        </>
+    );
 };
 
 export default DotSelection;

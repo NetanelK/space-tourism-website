@@ -1,17 +1,89 @@
-@media (max-width: 450px) {
-    .name {
-        font: 400 24px "Bellefair";
-        text-transform: uppercase;
+.grid {
+    display: grid;
+    grid-template-areas: "dots content image";
+    grid-template-columns: 320px 600px 515px;
+    justify-content: center;
+}
+
+.grid img {
+    grid-area: image;
+    width: 100%;
+}
+
+.content {
+    grid-area: content;
+    max-width: 470px;
+    padding-top: 111px;
+}
+
+.content .terminology {
+    font: 400 16px "Barlow Condensed";
+    color: #d0d6f9;
+    letter-spacing: 2.7px;
+    margin: 0;
+}
+
+.content .name {
+    font: 400 56px "Bellefair";
+    text-transform: uppercase;
+}
+
+.content p {
+    font-size: 18px;
+    line-height: 2em;
+    color: #d0d6f9;
+    margin: 0 auto;
+}
+
+@media (max-width: 475px) {
+    .grid {
+        display: block;
+    }
+
+    .content {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .content .name {
+        font-size: 24px;
+        letter-spacing: 2.36;
         margin-block: 0.33em 0.66em;
     }
 
-    .terminology {
-        font: 400 14px "Barlow Condensed";
-        color: #d0d6f9;
+    .content .terminology {
+        font-size: 14px;
         margin-block: 0 0.5em;
     }
 
-    p {
+    .content p {
         max-width: 325px;
+        font-size: 15px;
+        line-height: 25px;
+    }
+}
+
+@media (min-width: 476px) and (max-width: 1024px) {
+    .grid {
+        display: block;
+    }
+
+    .content {
+        text-align: center;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .content .name {
+        font-size: 40px;
+        margin: 1rem 0;
+    }
+
+    .content p {
+        max-width: 458px;
+        font-size: 16px;
+        line-height: 28px;
+        margin: 0 auto;
     }
 }

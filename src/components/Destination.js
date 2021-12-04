@@ -26,27 +26,34 @@ const Destination = (props) => {
             <h5>
                 <strong>01</strong>PICK YOUR DESTINATION
             </h5>
-            <img
-                src={activeDestinationData.images.webp}
-                alt={activeDestination}
-                className={classes.object}
-            />
-            <NavBar
-                items={destinationsName}
-                activeTab={activeDestination}
-                onClick={clickHandler}
-                lineHeight='32px'
-            />
-            <div>
-                <h1>{activeDestination.toUpperCase()}</h1>
-                <p>{activeDestinationData.description}</p>
-                <span className={classes.vl}></span>
-                <h6>AVG. DISTANCE</h6> {/* change this tag */}
-                {/* change this tag */}
-                <h4>{activeDestinationData.distance}</h4>{" "}
-                <h6>Est. travel time</h6> {/* change this tag */}
-                {/* change this tag */}
-                <h4>{activeDestinationData.travel}</h4>
+            <div className={classes.flex}>
+                <img
+                    src={activeDestinationData.images.webp}
+                    alt={activeDestination}
+                    className={classes.object}
+                />
+                <div className={classes.content}>
+                    <NavBar
+                        items={destinationsName}
+                        activeTab={activeDestination}
+                        onClick={clickHandler}
+                        lineHeight='32px'
+                    />
+                    <h1>{activeDestination.toUpperCase()}</h1>
+                    <p>{activeDestinationData.description}</p>
+                    <div class={classes.trip}>
+                        <div class='distance'>
+                            <h6>AVG. DISTANCE</h6> {/* change this tag */}
+                            {/* change this tag */}
+                            <h4>{activeDestinationData.distance}</h4>{" "}
+                        </div>
+                        <div class='time'>
+                            <h6>Est. travel time</h6> {/* change this tag */}
+                            {/* change this tag */}
+                            <h4>{activeDestinationData.travel}</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

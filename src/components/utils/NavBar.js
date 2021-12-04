@@ -1,22 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
-import "./NavBar.module.css";
-
 const List = styled.ul`
     display: flex;
     align-items: center;
     max-width: max-content;
-    height: 100%;
+    /* height: 100%; */
     gap: 3rem;
     position: relative;
 
-    @media (max-width: 450px) {
+    @media (max-width: 475px) {
         all: unset;
         display: flex;
         list-style: none;
         text-align: left;
         width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+        font: 400 14px "Barlow Condensed";
+        padding: 0;
+        margin: 0 auto;
     }
 
     ${(props) =>
@@ -34,7 +38,6 @@ const List = styled.ul`
                 flex-direction: row;
                 justify-content: center;
                 gap: 2em;
-                margin-bottom: 1.4em;
         }`}
 `;
 
@@ -99,6 +102,9 @@ const ListItem = styled.li`
     
             
     `} 
+    @media (max-width: 1024px) {
+        font: 400 14px "Barlow Condensed";
+    }
 
     @keyframes slideDown {
         from {

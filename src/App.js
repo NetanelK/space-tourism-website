@@ -33,7 +33,12 @@ function App() {
         <div
             className='App'
             style={{
-                background: `right / cover no-repeat url(/assets/${activePage}/background-${activePage}-${platform}.jpg)`
+                background: `right / cover no-repeat url(/assets/${activePage}/background-${activePage}-${platform}.jpg)`,
+                height:
+                    Math.max(
+                        document.body.scrollHeight,
+                        document.documentElement.clientHeight || 0
+                    ) + "px"
             }}
         >
             <Header
@@ -44,14 +49,17 @@ function App() {
 
             {activePage === "home" && (
                 <div className='home'>
-                    <h5>SO, YOU, WANT TO TRAVEL TO</h5>
-                    <h1>SPACE</h1>
-                    <p>
-                        Let’s face it; if you want to go to space, you might as
-                        well genuinely go to outer space and not hover kind of
-                        on the edge of it. Well sit back, and relax because
-                        we’ll give you a truly out of this world experience!
-                    </p>
+                    <div className='content'>
+                        <h5>SO, YOU, WANT TO TRAVEL TO</h5>
+                        <h1>SPACE</h1>
+                        <p>
+                            Let’s face it; if you want to go to space, you might
+                            as well genuinely go to outer space and not hover
+                            kind of on the edge of it. Well sit back, and relax
+                            because we’ll give you a truly out of this world
+                            experience!
+                        </p>
+                    </div>
                     <a
                         href='#'
                         onClick={() => clickHandler("destination")}
@@ -62,7 +70,7 @@ function App() {
                 </div>
             )}
             {activePage === "destination" && <Destination />}
-            {activePage === "crew" && <Crew />}
+            {activePage === "crew" && <Crew platform={platform} />}
             {activePage === "technology" && <Technology />}
         </div>
     );

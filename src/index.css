@@ -21,6 +21,8 @@ h4 {
 
 h1 {
     font-size: 9.375em;
+    line-height: 1em;
+    margin-block: 1.5rem;
 }
 
 h2 {
@@ -35,6 +37,10 @@ h5 {
     font: 400 1.75em "Barlow Condensed", sans-serif;
     letter-spacing: 4.75px;
     color: #d0d6f9;
+}
+
+p {
+    font-family: "Barlow", sans-serif;
 }
 
 /* Body set up */

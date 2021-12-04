@@ -6,7 +6,18 @@ import { technology } from "../data.json";
 import classes from "./Technology.module.css";
 
 const Image = styled.img`
-    height: 170px;
+    max-height: 527px;
+
+    @media (min-width: 476px) and (max-width: 1024px) {
+        width: 100%;
+        height: 310px;
+        max-height: 310px;
+        margin-block: 3.75em 0.5em;
+    }
+
+    @media (max-width: 475px) {
+        max-height: 170px;
+    }
 `;
 
 const Technology = () => {
@@ -26,25 +37,26 @@ const Technology = () => {
             <h5>
                 <strong>03</strong>SPACE LAUNCH 101
             </h5>
-            {window.outerWidth > 1024 ? (
-                // <Image src={activeTechnologyData.images.portrait} />
-                "a"
-            ) : (
-                <Image src={activeTechnologyData.images.landscape} />
-            )}
-
-            <DotSelection
-                amount={3}
-                onClick={clickHandler}
-                items={techNames}
-                content={[1, 2, 3]}
-                active={activeTechnology}
-            />
-
-            <div>
-                <h5 className={classes.terminology}>THE TERMINOLOGY…</h5>
-                <h1 className={classes.name}>{activeTechnologyData.name}</h1>
-                <p>{activeTechnologyData.description}</p>
+            <div className={classes.grid}>
+                {window.outerWidth > 1025 ? (
+                    <Image src={activeTechnologyData.images.portrait} />
+                ) : (
+                    <Image src={activeTechnologyData.images.landscape} />
+                )}
+                <DotSelection
+                    amount={3}
+                    onClick={clickHandler}
+                    items={techNames}
+                    content={[1, 2, 3]}
+                    active={activeTechnology}
+                />
+                <div className={classes.content}>
+                    <h5 className={classes.terminology}>THE TERMINOLOGY…</h5>
+                    <h1 className={classes.name}>
+                        {activeTechnologyData.name}
+                    </h1>
+                    <p>{activeTechnologyData.description}</p>
+                </div>
             </div>
         </div>
     );

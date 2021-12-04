@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, Fragment } from "react";
 
 import DotSelection from "./utils/DotSelection";
 import { crew } from "../data.json";
@@ -20,7 +20,7 @@ const Crew = (props) => {
         setTimeout(() => {
             console.log(selectedCrew, loopCrew);
             setActiveCrew(selectedCrew);
-        }, 5000);
+        }, 15000);
     }, [activeCrew]);
 
     const activeCrewData = crew.filter(
@@ -32,29 +32,82 @@ const Crew = (props) => {
     };
 
     return (
-        <div>
+        <div className={classes.crew}>
             <h5>
                 <strong>02</strong>MEET YOUR CREW
             </h5>
-            <img
-                src={activeCrewData.images.webp}
-                alt={activeCrewData.name}
-                className={classes.avatar}
-            />
-            <span className={classes.vl} />
+            {props.platform === "mobile" && (
+                <>
+                    <img
+                        src={activeCrewData.images.webp}
+                        alt={activeCrewData.name}
+                        className={classes.avatar}
+                    />
 
-            <DotSelection
-                amount={4}
-                onClick={handleClick}
-                items={crewNames}
-                active={activeCrew}
-            />
+                    <span className={classes.vl} />
 
-            <div>
-                <span className={classes.role}>{activeCrewData.role}</span>
-                <h1 className={classes.name}>{activeCrewData.name}</h1>
-                <p>{activeCrewData.bio}</p>
-            </div>
+                    <DotSelection
+                        amount={4}
+                        onClick={handleClick}
+                        items={crewNames}
+                        active={activeCrew}
+                    />
+                    <div className={classes.content}>
+                        <span className={classes.role}>
+                            {activeCrewData.role}
+                        </span>
+                        <h1 className={classes.name}>{activeCrewData.name}</h1>
+                        <p>{activeCrewData.bio}</p>
+                    </div>
+                </>
+            )}
+
+            {props.platform === "desktop" && (
+                <div className={classes.flex}>
+                    <div className={classes.content}>
+                        <span className={classes.role}>
+                            {activeCrewData.role}
+                        </span>
+                        <h1 className={classes.name}>{activeCrewData.name}</h1>
+                        <p>{activeCrewData.bio}</p>
+                        <DotSelection
+                            amount={4}
+                            onClick={handleClick}
+                            items={crewNames}
+                            active={activeCrew}
+                            page='crew'
+                        />
+                    </div>
+                    <img
+                        src={activeCrewData.images.webp}
+                        alt={activeCrewData.name}
+                        className={classes.avatar}
+                    />
+                </div>
+            )}
+
+            {props.platform === "tablet" && (
+                <>
+                    <div className={classes.content}>
+                        <span className={classes.role}>
+                            {activeCrewData.role}
+                        </span>
+                        <h1 className={classes.name}>{activeCrewData.name}</h1>
+                        <p>{activeCrewData.bio}</p>
+                    </div>
+                    <DotSelection
+                        amount={4}
+                        onClick={handleClick}
+                        items={crewNames}
+                        active={activeCrew}
+                    />
+                    <img
+                        src={activeCrewData.images.webp}
+                        alt={activeCrewData.name}
+                        className={classes.avatar}
+                    />
+                </>
+            )}
         </div>
     );
 };

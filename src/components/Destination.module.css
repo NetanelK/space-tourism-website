@@ -1,6 +1,7 @@
 h5 {
     color: white;
     letter-spacing: 2.75px;
+    margin: 2.71em 0 2.28em 5.92em;
 }
 
 h5 strong {
@@ -8,46 +9,135 @@ h5 strong {
     opacity: 25%;
 }
 
-@media (max-width: 450px) {
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.object {
+    max-width: 445px;
+}
+
+.content {
+    max-width: 485px;
+}
+
+.content h1 {
+    font-size: 100px;
+    margin: 2.3125rem 0 0.875rem 2.5rem;
+}
+
+.content p {
+    font: 400 18px/32px "Barlow";
+    margin-left: 40px;
+    color: #d0d6f9;
+}
+
+.trip {
+    display: grid;
+    margin: 3.375rem 0 0 2.5rem;
+    padding-top: 1.75em;
+    border-top: 1px solid #383b4b;
+    grid-template-columns: 1fr 1fr;
+}
+
+.trip h4 {
+    font: 400 28px "Bellefair";
+    text-transform: uppercase;
+}
+
+.trip h6 {
+    font: 400 14px "Barlow Condensed";
+    letter-spacing: 2.36px;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    color: #d0d6f9;
+}
+
+@media (max-width: 475px) {
     h5 {
         font-size: 16px;
-        margin-top: 1.5em;
+        margin: 1.5em 0 0 0;
+    }
+
+    .flex {
+        display: block;
     }
 
     .object {
         max-width: 10.5em;
-        margin: 2em auto;
+        margin: 0 auto 1.625em auto;
     }
 
-    h1 {
+    .content h1 {
         font-size: 3.5em;
+        margin-block: 2.25rem 0;
     }
 
-    p {
+    .content p {
         max-width: 327px;
+        line-height: 25px;
         margin: 0 auto;
         font-family: "Barlow";
     }
 
-    .vl {
+    .trip {
         display: block;
-        height: 1px;
-        width: 327px;
-        background: #383b4b;
         margin: 2em auto;
+        padding-top: 2em;
+        max-width: 327px;
     }
 
-    h4 {
-        font-size: 28px;
+    .trip h6 {
+        font-weight: 400;
+        margin-bottom: 0.85em;
+    }
+
+    .trip h4 {
         margin-bottom: 2rem;
     }
+}
 
-    h6 {
-        font-size: 14px;
-        font-weight: 400;
-        letter-spacing: 2.36px;
-        color: #d0d6f9;
-        margin-bottom: 0.85em;
-        text-transform: uppercase;
+@media (min-width: 476px) and (max-width: 1024px) {
+    h5 {
+        font-size: 20px;
+        letter-spacing: 3.38px;
+        margin-left: 1.9em;
+    }
+
+    .flex {
+        display: block;
+    }
+
+    .content {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 5em;
+        margin-block: 0.65em 0.1em;
+    }
+
+    .content p {
+        max-width: 573px;
+        line-height: 28px;
+        margin: 0 auto;
+    }
+
+    .trip {
+        max-width: 573px;
+        justify-content: space-evenly;
+        padding-top: 1.75em;
+        margin: 3.125em auto 0 auto;
+    }
+
+    .trip h4 {
+        margin-top: 0.75rem;
+    }
+
+    img {
+        max-height: 300px;
+        margin: 3.75em auto;
     }
 }
